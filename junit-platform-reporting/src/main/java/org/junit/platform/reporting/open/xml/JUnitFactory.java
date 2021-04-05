@@ -11,6 +11,10 @@ class JUnitFactory {
     private JUnitFactory() {
     }
 
+    static Factory<UniqueId> uniqueId(org.junit.platform.engine.UniqueId uniqueId) {
+        return context -> new UniqueId(context, uniqueId);
+    }
+
     static Factory<LegacyReportingName> legacyReportingName(String legacyReportingName) {
         return context -> new LegacyReportingName(context, legacyReportingName);
     }
